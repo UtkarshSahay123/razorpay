@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Payment - Lumina Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body class="bg-gray-50 flex items-center justify-center h-screen">
+    <div class="max-w-md w-full bg-white rounded-lg shadow-md p-8 text-center" id="statusContainer">
+        <h1 class="text-2xl font-bold mb-4 text-blue-600" id="statusTitle">Initializing Payment...</h1>
+        <p class="text-gray-600 mb-6" id="statusMessage">Please wait while we connect to the secure payment portal.</p>
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto" id="loadingSpinner"></div>
+        <button id="retryBtn" class="hidden mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700" onclick="window.location.reload()">Retry</button>
+        <button id="dashboardBtn" class="hidden mt-4 bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700" onclick="window.location.href='studentdashboard.html'">Go to Dashboard</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = 'studentsign.html';
+                return;
+            }
+            
+            const returnUrl = document.referrer || 'studentdashboard.html';
+            window.returnUrl = returnUrl; // Store globally for buttons
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const courseId = urlParams.get('courseId');
+            const amount = urlParams.get('amount');
+
+            if (!courseId || !amount) {
+                showError("Invalid Course Information", "Missing course details in the request.");
+                return;
+            }
+
+            try {
+                // 1. Create Order
+                const createOrderRes = await fetch('http://localhost:8080/api/payment/create-order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        courseId: parseInt(courseId),
+                        amount: parseFloat(amount)
+                    })
+                });
+
+                if (!createOrderRes.ok) {
+                    throw new Error("Failed to create order");
+                }
+
+                const orderData = await createOrderRes.json();
+
+                // 2. Initialize Razorpay
+                const options = {
+                    "key": orderData.keyId,
+                    "amount": orderData.amount,
+                    "currency": "INR",
+                    "name": "Lumina Education",
+                    "description": "Course Enrollment",
+                    "order_id": orderData.orderId,
+                    "handler": async function (response) {
+                        verifyPayment(response.razorpay_payment_id, response.razorpay_order_id, response.razorpay_signature, token);
+                    },
+                    "prefill": {
+                        "name": "Student",
+                        "email": "student@example.com"
+                    },
+                    "theme": {
+                        "color": "#00288e"
+                    },
+                    "modal": {
+                        "ondismiss": async function() {
+                            try {
+                                await fetch('http://localhost:8080/api/payment/abandoned', {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+                                    body: JSON.stringify({ orderId: orderData.orderId })
+                                });
+                            } catch (e) { console.error(e); }
+                            showError("Payment Cancelled", "You closed the payment popup.");
+                        }
+                    }
+                };
+
+                document.getElementById("statusTitle").innerText = "Waiting for Payment";
+                document.getElementById("statusMessage").innerText = "Please complete the payment in the Razorpay popup.";
+                
+                const rzp1 = new Razorpay(options);
+                
+                rzp1.on('payment.failed', async function (response){
+                    try {
+                        await fetch('http://localhost:8080/api/payment/failed', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+                            body: JSON.stringify({
+                                orderId: orderData.orderId,
+                                failureCode: response.error.code,
+                                failureReason: response.error.description
+                            })
+                        });
+                    } catch (e) { console.error(e); }
+                    showError("Payment Failed", response.error.description);
+                });
+
+                rzp1.open();
+
+            } catch (error) {
+                console.error(error);
+                showError("Error", "Could not initialize payment gateway.");
+            }
+        });
+
+        async function verifyPayment(paymentId, orderId, signature, token) {
+            document.getElementById("statusTitle").innerText = "Verifying Payment...";
+            document.getElementById("statusMessage").innerText = "Please wait while we confirm your enrollment.";
+            document.getElementById("statusTitle").className = "text-2xl font-bold mb-4 text-yellow-600";
+            
+            try {
+                const verifyRes = await fetch('http://localhost:8080/api/payment/verify', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        razorpayPaymentId: paymentId,
+                        razorpayOrderId: orderId,
+                        razorpaySignature: signature
+                    })
+                });
+
+                if (verifyRes.ok) {
+                    document.getElementById("statusTitle").innerText = "Payment Successful!";
+                    document.getElementById("statusMessage").innerText = "You have been successfully enrolled. Redirecting...";
+                    document.getElementById("statusTitle").className = "text-2xl font-bold mb-4 text-green-600";
+                    document.getElementById("loadingSpinner").classList.add("hidden");
+                    
+                    const dashBtn = document.getElementById("dashboardBtn");
+                    dashBtn.onclick = function() { window.location.href = window.returnUrl; };
+                    dashBtn.innerText = "Return";
+                    dashBtn.classList.remove("hidden");
+                    
+                    setTimeout(() => { window.location.href = window.returnUrl; }, 3000);
+                } else {
+                    showError("Verification Failed", "Payment verification failed. Please contact support.");
+                }
+            } catch (error) {
+                console.error(error);
+                showError("Verification Error", "An error occurred during verification.");
+            }
+        }
+
+        function showError(title, message) {
+            document.getElementById("statusTitle").innerText = title;
+            document.getElementById("statusMessage").innerText = message + " Redirecting back...";
+            document.getElementById("statusTitle").className = "text-2xl font-bold mb-4 text-red-600";
+            document.getElementById("loadingSpinner").classList.add("hidden");
+            
+            const retryBtn = document.getElementById("retryBtn");
+            retryBtn.onclick = function() { window.location.href = window.returnUrl; };
+            retryBtn.innerText = "Go Back";
+            retryBtn.classList.remove("hidden");
+            
+            setTimeout(() => { window.location.href = window.returnUrl; }, 3000);
+        }
+    </script>
+<script src="tracking.js"></script>
+</body>
+</html>

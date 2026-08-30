@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>EduFlow - Home</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-bright": "#f7f9fb",
+            "on-secondary-fixed": "#002113",
+            "secondary-fixed-dim": "#4edea3",
+            "on-secondary-container": "#00714d",
+            "tertiary-container": "#872d00",
+            "surface-tint": "#3755c3",
+            "on-error": "#ffffff",
+            "secondary-container": "#6cf8bb",
+            "surface-container-low": "#f2f4f6",
+            "on-primary-fixed": "#001453",
+            "outline-variant": "#c4c5d5",
+            "on-surface": "#191c1e",
+            "tertiary-fixed": "#ffdbce",
+            "surface": "#f7f9fb",
+            "on-primary-container": "#a8b8ff",
+            "surface-container-high": "#e6e8ea",
+            "error": "#ba1a1a",
+            "on-error-container": "#93000a",
+            "outline": "#757684",
+            "primary-container": "#1e40af",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#b8c4ff",
+            "inverse-on-surface": "#eff1f3",
+            "background": "#f7f9fb",
+            "secondary-fixed": "#6ffbbe",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#e0e3e5",
+            "on-background": "#191c1e",
+            "on-tertiary-container": "#ffa583",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed-variant": "#802a00",
+            "surface-container": "#eceef0",
+            "primary": "#00288e",
+            "on-tertiary-fixed": "#380d00",
+            "inverse-primary": "#b8c4ff",
+            "primary-fixed": "#dde1ff",
+            "tertiary-fixed-dim": "#ffb59a",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#173bab",
+            "secondary": "#006c49",
+            "tertiary": "#611e00",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#2d3133",
+            "surface-dim": "#d8dadc",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-variant": "#e0e3e5",
+            "on-surface-variant": "#444653"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "base": "4px",
+            "sm": "16px",
+            "margin-mobile": "16px",
+            "xs": "8px",
+            "md": "24px",
+            "lg": "40px",
+            "gutter": "24px",
+            "margin-desktop": "48px",
+            "xl": "64px"
+          },
+          "fontFamily": {
+            "body-md": ["Inter", "sans-serif"],
+            "headline-lg": ["Inter", "sans-serif"],
+            "headline-md": ["Inter", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "headline-lg-mobile": ["Inter", "sans-serif"],
+            "caption": ["Inter", "sans-serif"],
+            "display-lg": ["Inter", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-background antialiased min-h-screen pb-24 md:pb-0 pt-16 md:pt-0">
+  <!-- TopAppBar (Desktop) -->
+  <header
+    class="hidden md:flex justify-between items-center px-margin-desktop h-20 w-full bg-surface shadow-sm sticky top-0 z-50">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-3xl" data-icon="school">school</span>
+      <span class="font-headline-md text-headline-md text-primary font-bold">EduFlow</span>
+    </div>
+    <nav class="flex gap-8 items-center">
+      <a class="text-primary font-bold font-label-md text-label-md" href="#">Home</a>
+     
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+        href="course.html">Catalog</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+        href="adminsignin.html">Admin</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="studentsign.html" id="avatarLinkDesktop" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-surface-variant transition-colors shadow-sm text-on-surface-variant">
+        <span class="material-symbols-outlined text-2xl">person</span>
+      </a>
+    </div>
+  </header>
+  <!-- TopAppBar (Mobile) -->
+  <header
+    class="md:hidden flex justify-between items-center px-margin-mobile h-16 w-full fixed top-0 z-50 bg-surface shadow-sm">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-2xl" data-icon="school">school</span>
+      <span class="font-headline-md text-headline-md-mobile text-primary font-bold">EduFlow</span>
+    </div>
+    <a href="studentsign.html" id="avatarLinkMobile" class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-surface-variant transition-colors shadow-sm text-on-surface-variant">
+      <span class="material-symbols-outlined text-xl">person</span>
+    </a>
+  </header>
+  <main class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-lg space-y-xl">
+    <!-- Hero Section -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-lg items-center">
+      <div class="space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-primary-fixed rounded-full">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="font-caption text-caption text-on-primary-fixed-variant">New Courses Available</span>
+        </div>
+        <h1 class="font-display-lg text-display-lg text-on-surface">Unlock Your Potential with <span
+            class="text-primary">EduFlow</span></h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+          Discover personalized learning paths, interactive modules, and a community of experts dedicated to your
+          success.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <button
+            class="h-[48px] px-8 bg-primary text-on-primary rounded-xl font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">
+            Start Learning
+          </button>
+          <button
+            class="h-[48px] px-8 bg-surface-container text-on-surface rounded-xl font-label-md text-label-md border border-outline-variant hover:bg-surface-variant transition-colors">
+            Browse Catalog
+          </button>
+        </div>
+      </div>
+      <div class="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-md">
+        <img alt="Education Hero Illustration" class="w-full h-full object-cover"
+          data-alt="A modern, abstract 3D illustration representing education and growth. Features floating geometric shapes, a stylized open book, and light rays in deep blue and pristine white. Clean EdTech style, soft ambient lighting."
+          src="imgindex.png">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+      </div>
+    </section>
+    <!-- Search Bar -->
+    <section class="w-full max-w-3xl mx-auto">
+      <div class="relative flex items-center">
+        <span class="material-symbols-outlined absolute left-4 text-outline text-xl" data-icon="search">search</span>
+        <input
+          class="w-full h-14 pl-12 pr-4 rounded-xl border border-outline-variant bg-surface focus:ring-2 focus:ring-primary/20 focus:border-primary font-body-md text-body-md text-on-surface placeholder:text-outline shadow-sm transition-all"
+          placeholder="What do you want to learn today?" type="text">
+        <button
+          class="absolute right-2 h-10 px-6 bg-secondary text-on-secondary rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity">
+          Search
+        </button>
+      </div>
+    </section>
+    <!-- Featured Courses (Bento Grid) -->
+    <section class="space-y-8">
+      <div class="flex justify-between items-end">
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Featured Paths</h2>
+        <a class="font-label-md text-label-md text-primary hover:underline" href="#">View all</a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[240px]">
+        <!-- Large Card -->
+        <div
+          class="md:col-span-2 md:row-span-2 bg-surface rounded-2xl p-6 shadow-sm border border-surface-container-highest relative overflow-hidden group hover:shadow-md transition-shadow">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('file:///C:/Users/Utkarsh/.gemini/antigravity-ide/brain/9537c8ad-f500-40b6-82da-eb8cfa3056a9/ml_architecture_course_1787867521180.png')"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-surface/10"></div>
+          <div
+            class="absolute top-0 right-0 w-64 h-64 bg-primary-fixed opacity-30 rounded-full blur-3xl -mr-20 -mt-20 group-hover:scale-110 transition-transform duration-700">
+          </div>
+          <div class="relative z-10 h-full flex flex-col justify-between">
+            <div class="space-y-4">
+              <span
+                class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container font-caption text-caption">Data
+                Science</span>
+              <h3 class="font-headline-md text-headline-md text-on-surface">Advanced Machine Learning Architecture</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Master neural networks and deep
+                learning frameworks with hands-on projects and real-world datasets.</p>
+            </div>
+            <div class="flex items-center justify-between mt-auto">
+              <div class="flex items-center gap-2 text-on-surface-variant font-caption text-caption">
+                <span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> 12 Weeks
+                <span class="material-symbols-outlined text-sm ml-2" data-icon="bar_chart">bar_chart</span> Advanced
+              </div>
+              <button
+                class="h-10 px-4 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm"><a href="course.html">Enroll</a></button>
+            </div>
+          </div>
+        </div>
+        <!-- Small Card 1 -->
+        <div
+          class="bg-surface rounded-2xl p-6 shadow-sm border border-surface-container-highest relative overflow-hidden group hover:shadow-md transition-shadow">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('file:///C:/Users/Utkarsh/.gemini/antigravity-ide/brain/9537c8ad-f500-40b6-82da-eb8cfa3056a9/ui_ux_fundamentals_1787867680064.png')"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/90 to-surface/20"></div>
+          <div
+            class="absolute bottom-0 right-0 w-32 h-32 bg-secondary-container opacity-30 rounded-full blur-2xl -mr-10 -mb-10 group-hover:scale-110 transition-transform duration-700">
+          </div>
+          <div class="relative z-10 h-full flex flex-col justify-between">
+            <div class="space-y-2">
+              <span
+                class="inline-flex items-center px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-caption text-caption shadow-sm">Design</span>
+              <h3 class="font-headline-md text-headline-md text-on-surface text-lg">UI/UX Fundamentals</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-2">Learn the principles of
+                user-centered design and prototyping.</p>
+            </div>
+            <div class="flex items-center gap-2 text-on-surface-variant font-caption text-caption mt-4">
+              <span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> 4 Weeks
+            </div>
+          </div>
+        </div>
+        <!-- Small Card 2 -->
+        <div
+          class="bg-surface rounded-2xl p-6 shadow-sm border border-surface-container-highest relative overflow-hidden group hover:shadow-md transition-shadow">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('file:///C:/Users/Utkarsh/.gemini/antigravity-ide/brain/9537c8ad-f500-40b6-82da-eb8cfa3056a9/strategic_management_1787867694669.png')"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/90 to-surface/20"></div>
+          <div
+            class="absolute top-0 left-0 w-32 h-32 bg-tertiary-container opacity-30 rounded-full blur-2xl -ml-10 -mt-10 group-hover:scale-110 transition-transform duration-700">
+          </div>
+          <div class="relative z-10 h-full flex flex-col justify-between">
+            <div class="space-y-2">
+              <span
+                class="inline-flex items-center px-2.5 py-1 rounded-full bg-tertiary-container text-on-tertiary-container font-caption text-caption shadow-sm">Business</span>
+              <h3 class="font-headline-md text-headline-md text-on-surface text-lg">Strategic Management</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-2">Develop critical
+                thinking for corporate leadership.</p>
+            </div>
+            <div class="flex items-center gap-2 text-on-surface-variant font-caption text-caption mt-4">
+              <span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> 8 Weeks
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Social Proof -->
+    <section class="py-12 bg-surface-container-low rounded-3xl px-6 md:px-12 my-xl text-center">
+      <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-8">Trusted by thousands
+        of learners</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Review 1 -->
+        <div class="bg-surface p-6 rounded-2xl shadow-sm text-left relative">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-4xl absolute top-4 right-4 opacity-50"
+            data-icon="format_quote">format_quote</span>
+          <div class="flex items-center gap-1 text-secondary mb-4">
+            <span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+            <span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+            <span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+            <span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+            <span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface mb-6">"The Data Science path completely transformed my
+            career trajectory. The hands-on projects were exactly what I needed."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden">
+              <img alt="Student" class="w-full h-full object-cover"
+                data-alt="Small circular portrait of a young professional smiling. Clean, bright lighting."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-z5qr4opRXoOk3j6whCUODCk59eFBwB2hfgI81Kb4XQ1hue9OFLrixnoD0MaC3a_hyZRAGGyenp-LPFn5FYFX3XcROMNkcD-S_Cy6D-nYZD-Wpp7xIyRTQqHpxnC8riPXm_BArYIH5x7XeoSzquNFbPscCGmjCI3-cvSse9edr0YRsNAVhccnnRHe6Ld5WDjQbvk1r44GsaUrFrNy6u1fpviC4ix2zjnvLxVhbhg3t9HRqF6q0qABPg">
+            </div>
+            <div>
+              <p class="font-label-md text-label-md text-on-surface">Sarah J.</p>
+              <p class="font-caption text-caption text-on-surface-variant">Data Analyst</p>
+            </div>
+          </div>
+        </div>
+        <!-- Review 2 -->
+        <div class="bg-surface p-6 rounded-2xl shadow-sm text-left relative">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-4xl absolute top-4 right-4 opacity-50"
+            data-icon="format_quote">format_quote</span>
+          <div class="flex items-center gap-1 text-secondary mb-4">
+            <span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+            <span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+            <span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+            <span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+            <span class="material-symbols-outlined text-sm" data-icon="star_half">star_half</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface mb-6">"I love the clean interface and how easy it is to
+            track my progress. Highly recommend the UI/UX courses."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden">
+              <img alt="Student" class="w-full h-full object-cover"
+                data-alt="Small circular portrait of a young designer looking thoughtful. Minimalist background."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK7xRUAb8Qf1AaDyt58zQcqPHM4eyj_Gy3rHoOIwXvwTpWYe683Sm00HNIVhN0iqeRqJOy3m-IYgvsN5kHhM0sxxaWiErt06Iy08wThAIKN3m62T5OEVw2L4QciiLLWucWi-k0U7dAtTb3rh-ULSExglaajmGc2ipf-E_fZ3iZnS5cvkn5pYgjoVYkjTHEJLn5z8Q7QdPTg6owG8_NBCrWpx-vdIKQKIR6baTKjbaVoRY_uue_x3_GKg">
+            </div>
+            <div>
+              <p class="font-label-md text-label-md text-on-surface">Marcus T.</p>
+              <p class="font-caption text-caption text-on-surface-variant">Product Designer</p>
+            </div>
+          </div>
+        </div>
+        <!-- Review 3 -->
+        <div class="bg-surface p-6 rounded-2xl shadow-sm text-left relative">
+          <span class="material-symbols-outlined text-primary-fixed-dim text-4xl absolute top-4 right-4 opacity-50"
+            data-icon="format_quote">format_quote</span>
+          <div class="flex items-center gap-1 text-secondary mb-4">
+            <span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+            <span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+            <span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+            <span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+            <span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface mb-6">"EduFlow's approach to learning is refreshing. The
+            content is concise, high-quality, and very engaging."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden">
+              <img alt="Student" class="w-full h-full object-cover"
+                data-alt="Small circular portrait of an adult learner in a bright office environment."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8RUlYY2Ye6Ga9KY7hJxYSr8Hli4aobx2hdHCTiUKIbhi6Q-XdXSRXi7Tv_39IwAE_mvUgDuI3-HhvzSCBaOh7B3EB9aakR5D4BFQoKWlyWHZIIqVuxI3bAmis-nrqMi6SnXLIa8JaIDEgfE5g1Bhxg55-_jvnuHljT1nZRRJleFFbVOOuvJ28F44uB5lOVUrDkrhcB0rjMrjlLu7Bhh0dPu-5V3c7K8ZoyYNi6WIt13uYTxaZdZLYRw">
+            </div>
+            <div>
+              <p class="font-label-md text-label-md text-on-surface">Elena R.</p>
+              <p class="font-caption text-caption text-on-surface-variant">Marketing Manager</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="py-8 px-margin-mobile md:px-margin-desktop border-t border-outline-variant mt-xl">
+      <div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-2xl" data-icon="school">school</span>
+          <span class="font-headline-md text-headline-md text-primary font-bold">EduFlow</span>
+        </div>
+        <nav class="flex flex-wrap justify-center gap-6">
+          <a href="retrurn.html"
+            class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Return
+            Policy</a>
+          <a href="refund.html"
+            class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Refund
+            Policy</a>
+          <a href="privacy.html"
+            class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Privacy
+            Policy</a>
+          <a href="disclaimer.html"
+            class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Disclaimer</a>
+        </nav>
+        <p class="font-caption text-caption text-outline">© 2024 EduFlow. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+  <!-- BottomNavBar (Mobile Only) -->
+  <nav class="md:hidden flex justify-around items-center h-16 w-full pb-safe fixed bottom-0 z-50 bg-surface shadow-md">
+    <a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-90 duration-100"
+      href="#">
+      <span class="material-symbols-outlined" data-icon="home">home</span>
+      <span class="font-label-md text-label-md text-[10px]">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high rounded-xl transition-colors active:scale-90 duration-100"
+      href="#">
+      <span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+      <span class="font-label-md text-label-md text-[10px]">Insights</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high rounded-xl transition-colors active:scale-90 duration-100"
+      href="#">
+      <span class="material-symbols-outlined" data-icon="payments">payments</span>
+      <span class="font-label-md text-label-md text-[10px]">Billing</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high rounded-xl transition-colors active:scale-90 duration-100"
+      href="#">
+      <span class="material-symbols-outlined" data-icon="settings">settings</span>
+      <span class="font-label-md text-label-md text-[10px]">Settings</span>
+    </a>
+  </nav>
+
+  <script>
+    function handleAvatarClick(e) {
+      e.preventDefault();
+      const token = localStorage.getItem('token');
+      if (token) {
+        try {
+          const payloadBase64 = token.split('.')[1];
+          const payload = JSON.parse(atob(payloadBase64));
+          if (payload.role === 'ADMIN') {
+            window.location.href = 'admindash.html';
+          } else {
+            window.location.href = 'studentdashboard.html';
+          }
+        } catch (err) {
+          window.location.href = 'studentsign.html';
+        }
+      } else {
+        window.location.href = 'studentsign.html';
+      }
+    }
+    document.getElementById('avatarLinkDesktop').addEventListener('click', handleAvatarClick);
+    document.getElementById('avatarLinkMobile').addEventListener('click', handleAvatarClick);
+  </script>
+<script src="tracking.js"></script>
+</body>
+</html>

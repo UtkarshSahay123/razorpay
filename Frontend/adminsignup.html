@@ -1,0 +1,252 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Request Admin Access - Lumina Education</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f7f9fb",
+                        "inverse-primary": "#b8c4ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1e40af",
+                        "primary": "#00288e",
+                        "primary-fixed": "#dde1ff",
+                        "secondary": "#006c49",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "on-primary-fixed": "#001453",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#444653",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "tertiary-container": "#872d00",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary-container": "#a8b8ff",
+                        "on-surface": "#191c1e",
+                        "on-secondary-container": "#00714d",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#802a00",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-fixed-variant": "#173bab",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-fixed": "#380d00",
+                        "outline": "#757684",
+                        "surface-container-high": "#e6e8ea",
+                        "on-tertiary-container": "#ffa583",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary": "#611e00",
+                        "surface": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "surface-tint": "#3755c3",
+                        "tertiary-fixed": "#ffdbce",
+                        "secondary-fixed-dim": "#4edea3",
+                        "inverse-surface": "#2d3133",
+                        "outline-variant": "#c4c5d5",
+                        "on-background": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#6cf8bb",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-highest": "#e0e3e5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "sm": "16px",
+                        "xl": "64px",
+                        "xs": "8px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "lg": "40px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="h-full font-sans antialiased text-on-background flex flex-col bg-background">
+  <!-- TopAppBar (Desktop) -->
+  <header
+    class="hidden md:flex justify-between items-center px-margin-desktop h-20 w-full bg-surface shadow-sm sticky top-0 z-50">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-3xl" data-icon="school">school</span>
+      <span class="font-headline-md text-headline-md text-primary font-bold">EduFlow</span>
+    </div>
+    <nav class="flex gap-8 items-center">
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="index.html">Home</a>
+     
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+        href="course.html">Catalog</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+        href="adminsignin.html">Admin</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="studentsign.html" id="avatarLinkDesktop" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-surface-variant transition-colors shadow-sm text-on-surface-variant">
+        <span class="material-symbols-outlined text-2xl">person</span>
+      </a>
+    </div>
+  </header>
+  <!-- TopAppBar (Mobile) -->
+  <header
+    class="md:hidden flex justify-between items-center px-margin-mobile h-16 w-full fixed top-0 z-50 bg-surface shadow-sm">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-2xl" data-icon="school">school</span>
+      <span class="font-headline-md text-headline-md-mobile text-primary font-bold">EduFlow</span>
+    </div>
+    <a href="studentsign.html" id="avatarLinkMobile" class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-surface-variant transition-colors shadow-sm text-on-surface-variant">
+      <span class="material-symbols-outlined text-xl">person</span>
+    </a>
+  </header>
+<main class="flex-grow flex flex-col items-center justify-center p-4 mx-auto w-full max-w-lg mt-16 md:mt-20">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.05)] border border-outline-variant/30 p-md md:p-lg">
+<div class="text-center mb-lg">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-container/10 text-primary mb-sm">
+<span class="material-symbols-outlined text-3xl">admin_panel_settings</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-xs">Request Admin Access</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Please provide your details below. All admin accounts require manual approval from the site owner.</p>
+</div>
+<form id="adminSignupForm" class="space-y-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="first-name">First Name</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">person</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors font-body-md text-body-md text-on-surface placeholder-on-surface-variant/50" id="first-name" name="first-name" placeholder="e.g. Jane" required="" type="text">
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="phone-number">Phone Number</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">call</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors font-body-md text-body-md text-on-surface placeholder-on-surface-variant/50" id="phone-number" name="phone-number" placeholder="e.g. +1 (555) 000-0000" required="" type="tel">
+</div>
+</div><div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="work-email">Work Email</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">mail</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors font-body-md text-body-md text-on-surface placeholder-on-surface-variant/50" id="work-email" name="work-email" placeholder="name@lumina.edu" required="" type="email">
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="employee-id">Employee ID</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">badge</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors font-body-md text-body-md text-on-surface placeholder-on-surface-variant/50" id="employee-id" name="employee-id" placeholder="e.g. EMP-12345" required="" type="text">
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="password">Password</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">lock</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg bg-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors font-body-md text-body-md text-on-surface placeholder-on-surface-variant/50" id="password" name="password" placeholder="Enter your password" required="" type="password">
+</div>
+</div><div class="bg-surface-container-low rounded-lg p-sm border border-outline-variant/50 flex items-start gap-3 mt-lg">
+<span class="material-symbols-outlined text-primary mt-0.5">info</span>
+<div>
+<p class="font-caption text-caption text-on-surface-variant">
+<strong>Approval Process:</strong> Your request will be reviewed by the system administrator. You will receive an email notification once your access level has been granted or denied. This process typically takes 1-2 business days.
+                        </p>
+</div>
+</div>
+<div class="pt-sm space-y-sm">
+<button class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary font-label-md text-label-md h-12 rounded-lg hover:bg-primary/90 active:scale-95 transition-all duration-150 shadow-sm" type="submit">
+                        Submit Request
+                        <span class="material-symbols-outlined text-sm">send</span>
+</button>
+<a class="w-full flex items-center justify-center gap-2 bg-transparent text-primary font-label-md text-label-md h-12 rounded-lg hover:bg-primary-container/10 active:scale-95 transition-all duration-150 border border-transparent hover:border-primary-container/20" href="adminsignin.html">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                        Return to Login
+                    </a>
+</div>
+</form>
+</div>
+<div class="text-center mt-lg">
+<p class="font-caption text-caption text-on-surface-variant">© 2024 Lumina Education. All rights reserved.</p>
+</div>
+</main>
+
+<script>
+document.getElementById('adminSignupForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fullName = document.getElementById('first-name').value;
+    const email = document.getElementById('work-email').value;
+    const password = document.getElementById('password').value;
+    
+    try {
+        const response = await fetch('http://localhost:8080/api/auth/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ fullName, email, password, role: 'ADMIN' })
+        });
+        
+        if (response.ok) {
+            alert('Admin registration successful! Please sign in.');
+            window.location.href = 'adminsignin.html';
+        } else {
+            const errorText = await response.text();
+            alert('Registration failed: ' + errorText);
+        }
+    } catch (error) {
+        alert('Error connecting to server.');
+    }
+});
+</script>
+</body></html>
