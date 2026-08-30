@@ -1,0 +1,19 @@
+# Ignore secrets and environment files
+.env
+rzp-key.csv
+*.csv
+
+# Ignore compiled classes and build directories
+target/
+*.class
+
+# Ignore IDE files
+.idea/
+.vscode/
+*.iml
+
+# Node/Python stuff just in case
+node_modules/
+__pycache__/
+venv/
+.venv/

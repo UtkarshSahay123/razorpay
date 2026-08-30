@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina Education - Course Catalog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "on-tertiary": "#ffffff",
+                            "surface-variant": "#e0e3e5",
+                            "on-error": "#ffffff",
+                            "secondary-container": "#6cf8bb",
+                            "tertiary-container": "#872d00",
+                            "on-secondary-fixed": "#002113",
+                            "error": "#ba1a1a",
+                            "on-tertiary-container": "#ffa583",
+                            "tertiary-fixed-dim": "#ffb59a",
+                            "surface-tint": "#3755c3",
+                            "error-container": "#ffdad6",
+                            "on-primary-fixed": "#001453",
+                            "on-primary-fixed-variant": "#173bab",
+                            "surface-dim": "#d8dadc",
+                            "inverse-surface": "#2d3133",
+                            "on-secondary": "#ffffff",
+                            "inverse-on-surface": "#eff1f3",
+                            "tertiary": "#611e00",
+                            "secondary-fixed-dim": "#4edea3",
+                            "surface-container-lowest": "#ffffff",
+                            "on-background": "#191c1e",
+                            "on-primary-container": "#a8b8ff",
+                            "outline": "#757684",
+                            "on-error-container": "#93000a",
+                            "outline-variant": "#c4c5d5",
+                            "on-secondary-container": "#00714d",
+                            "on-tertiary-fixed-variant": "#802a00",
+                            "background": "#f7f9fb",
+                            "primary-fixed-dim": "#b8c4ff",
+                            "tertiary-fixed": "#ffdbce",
+                            "on-surface-variant": "#444653",
+                            "on-tertiary-fixed": "#380d00",
+                            "surface-container-highest": "#e0e3e5",
+                            "primary-container": "#1e40af",
+                            "surface-container": "#eceef0",
+                            "secondary": "#006c49",
+                            "on-secondary-fixed-variant": "#005236",
+                            "primary-fixed": "#dde1ff",
+                            "surface-container-high": "#e6e8ea",
+                            "surface-container-low": "#f2f4f6",
+                            "primary": "#00288e",
+                            "on-primary": "#ffffff",
+                            "inverse-primary": "#b8c4ff",
+                            "surface-bright": "#f7f9fb",
+                            "secondary-fixed": "#6ffbbe",
+                            "surface": "#f7f9fb",
+                            "on-surface": "#191c1e"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "gutter": "24px",
+                            "xl": "64px",
+                            "sm": "16px",
+                            "base": "4px",
+                            "margin-mobile": "16px",
+                            "lg": "40px",
+                            "margin-desktop": "48px",
+                            "xs": "8px",
+                            "md": "24px"
+                    },
+                    "fontFamily": {
+                            "display-lg": ["Inter"],
+                            "headline-lg-mobile": ["Inter"],
+                            "body-lg": ["Inter"],
+                            "label-md": ["Inter"],
+                            "headline-md": ["Inter"],
+                            "caption": ["Inter"],
+                            "headline-lg": ["Inter"],
+                            "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                            "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0">
+  <!-- TopAppBar (Desktop) -->
+  <header
+    class="hidden md:flex justify-between items-center px-margin-desktop h-20 w-full bg-surface shadow-sm sticky top-0 z-50">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-3xl" data-icon="school">school</span>
+      <span class="font-headline-md text-headline-md text-primary font-bold">EduFlow</span>
+    </div>
+    <nav class="flex gap-8 items-center">
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="index.html">Home</a>
+     
+      <a class="text-primary font-bold font-label-md text-label-md"
+        href="course.html">Catalog</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+        href="adminsignin.html">Admin</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="studentsign.html" id="avatarLinkDesktop" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-surface-variant transition-colors shadow-sm text-on-surface-variant">
+        <span class="material-symbols-outlined text-2xl">person</span>
+      </a>
+    </div>
+  </header>
+  <!-- TopAppBar (Mobile) -->
+  <header
+    class="md:hidden flex justify-between items-center px-margin-mobile h-16 w-full fixed top-0 z-50 bg-surface shadow-sm">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-2xl" data-icon="school">school</span>
+      <span class="font-headline-md text-headline-md-mobile text-primary font-bold">EduFlow</span>
+    </div>
+    <a href="studentsign.html" id="avatarLinkMobile" class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-surface-variant transition-colors shadow-sm text-on-surface-variant">
+      <span class="material-symbols-outlined text-xl">person</span>
+    </a>
+  </header>
+<main class="pt-24 md:pt-32 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="mb-md">
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface mb-xs">Course Catalog</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Explore our comprehensive collection of professional courses designed to accelerate your career.</p>
+</div>
+<!-- Search and Filter Bar -->
+<div class="flex flex-col md:flex-row gap-sm mb-lg">
+<div class="relative flex-grow">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-shadow shadow-sm" placeholder="Search for courses, skills, or topics..." type="text"/>
+</div>
+<button class="flex items-center justify-center gap-2 bg-surface-container border border-outline-variant rounded-lg px-4 py-3 hover:bg-surface-variant transition-colors shadow-sm md:w-auto w-full">
+<span class="material-symbols-outlined text-on-surface-variant">tune</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Filters</span>
+</button>
+</div>
+<!-- Category Chips -->
+<div class="flex overflow-x-auto pb-4 mb-md gap-sm hide-scrollbar">
+<button class="whitespace-nowrap px-4 py-2 bg-primary-container text-on-primary-container rounded-full font-label-md text-label-md border border-transparent">All Courses</button>
+<button class="whitespace-nowrap px-4 py-2 bg-surface-container-lowest text-on-surface-variant rounded-full font-label-md text-label-md border border-outline-variant hover:bg-surface-variant transition-colors">Data Science</button>
+<button class="whitespace-nowrap px-4 py-2 bg-surface-container-lowest text-on-surface-variant rounded-full font-label-md text-label-md border border-outline-variant hover:bg-surface-variant transition-colors">Business</button>
+<button class="whitespace-nowrap px-4 py-2 bg-surface-container-lowest text-on-surface-variant rounded-full font-label-md text-label-md border border-outline-variant hover:bg-surface-variant transition-colors">Design</button>
+<button class="whitespace-nowrap px-4 py-2 bg-surface-container-lowest text-on-surface-variant rounded-full font-label-md text-label-md border border-outline-variant hover:bg-surface-variant transition-colors">Engineering</button>
+<button class="whitespace-nowrap px-4 py-2 bg-surface-container-lowest text-on-surface-variant rounded-full font-label-md text-label-md border border-outline-variant hover:bg-surface-variant transition-colors">Marketing</button>
+</div>
+<!-- Course Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Course Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container-high overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+<div class="relative h-48 w-full">
+<div class="bg-cover bg-center w-full h-full" data-alt="A modern, bright workspace with a sleek laptop displaying design wireframes, next to a notebook and a cup of coffee. The lighting is soft and natural, creating a clean, professional aesthetic fitting a high-end UI/UX design course." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAs9e97biP1Qqfj03CHL6TLn9BIOClo3wgTuQ_vcBjJudzfJ8s4Kykk-vhBb_ZHulEfUU-U35bj5_o-KUhyqEw-Ga6Y3mZfHurHJOH50CnPLh9UJd0fdGc1pBFhv2kGeiu3hVxHVTzLBXEUjwbnKs_UbbzmtdzQC4bOfPKNPL5eusgXjm1Zxy_zismpn92pYP9BzIOJh5jVuhzPn46L6UonLkTa2sEp9Ar3KEbq0_E2LUebrMBjYktpxw')"></div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded font-caption text-caption text-primary">Design</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs leading-tight">Mastering UI/UX Design</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Learn the principles of user-centered design, wireframing, prototyping, and user testing to build intuitive digital experiences.</p>
+<div class="flex items-center gap-xs mb-md text-on-surface-variant">
+<span class="flex items-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined filled-icon text-[16px]">star</span>
+<span class="font-label-md text-label-md ml-1 text-on-surface">4.8</span>
+</span>
+<span class="font-caption text-caption">(2,451 students)</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">₹4,999</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md h-12 hover:bg-primary/90 transition-colors"><a id="enrollBtn1" href="studentsign.html" class="text-on-primary w-full h-full flex items-center justify-center">Enroll Now</a></button>
+</div>
+</div>
+</article>
+<!-- Course Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container-high overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+<div class="relative h-48 w-full">
+<div class="bg-cover bg-center w-full h-full" data-alt="A dynamic corporate meeting room environment viewed from above, featuring scattered financial reports, a modern tablet showing bar charts, and a stylish pen. Crisp lighting highlights the analytical nature of the scene, perfect for a business analytics course." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD62he48uup-mpBD5z8xdYPl4xAdBlZGBzVrmw7J5Mtig8o64u3QZYBPBez7f8APNywmI1OBgMglzWPveYjr2AkZ-tfTU_f2gckRqS-XD7jVtmcfv2QIdk9nt7wZ-DhPsUGB3e1TJDF2UlZGmimuEqCDqS1uxWXwKyuOP52rPvjSUQDL16QU4jKzV9nDPxCm5DN_qvCsCtUxrZrsmr999-0UzjLKW9rP8E3gfE9GBiAZJBxGCsHWYYpIA')"></div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded font-caption text-caption text-primary">Business</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs leading-tight">Business Analytics 101</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Transform raw data into actionable business strategies. Master Excel, SQL, and basic data visualization techniques.</p>
+<div class="flex items-center gap-xs mb-md text-on-surface-variant">
+<span class="flex items-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined filled-icon text-[16px]">star</span>
+<span class="font-label-md text-label-md ml-1 text-on-surface">4.6</span>
+</span>
+<span class="font-caption text-caption">(1,832 students)</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">₹3,500</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md h-12 hover:bg-primary/90 transition-colors"><a id="enrollBtn2" href="studentsign.html" class="text-on-primary w-full h-full flex items-center justify-center">Enroll Now</a></button>
+</div>
+</div>
+</article>
+<!-- Course Card 3 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container-high overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+<div class="relative h-48 w-full">
+<div class="bg-cover bg-center w-full h-full" data-alt="A dark-mode glowing code editor interface visible on a high-end monitor, surrounded by a minimalist desk setup with ambient blue bias lighting. The visual implies advanced programming and deep focus, suitable for an advanced Python course." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCZPf23vQ2W9wMOb3AUQX9NOrifBuzjzABraztxkhvj_sQEq8bpQRjjVnjXGkB4JHsmoGFAhxVHFhg147kRNOEadKxIX9UaWZbukl13K2WZ9ZLRRDT6GwO2Y6imcOEtLrPg2EeIfj0s5YxtwdTmhWK7YzuUqQlFqWvfx5i0ykwjNp3yCFJXC_7Lg8gkl3Pgzc6bGkYBfytR3b-aB82rh6pKwhRlqRL-_7BcNaJ6WeWRtB_paAmGBBJug')"></div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded font-caption text-caption text-primary">Data Science</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs leading-tight">Advanced Python Programming</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Dive deep into object-oriented programming, concurrency, and building scalable applications with Python.</p>
+<div class="flex items-center gap-xs mb-md text-on-surface-variant">
+<span class="flex items-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined filled-icon text-[16px]">star</span>
+<span class="font-label-md text-label-md ml-1 text-on-surface">4.9</span>
+</span>
+<span class="font-caption text-caption">(3,104 students)</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">₹12,500</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md h-12 hover:bg-primary/90 transition-colors"><a id="enrollBtn3" href="studentsign.html" class="text-on-primary w-full h-full flex items-center justify-center">Enroll Now</a></button>
+</div>
+</div>
+</article>
+<!-- Course Card 4 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container-high overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+<div class="relative h-48 w-full">
+<div class="bg-cover bg-center w-full h-full" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60')"></div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded font-caption text-caption text-primary">Marketing</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs leading-tight">Digital Marketing Strategy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Learn to build and execute comprehensive digital marketing campaigns across SEO, social, and email.</p>
+<div class="flex items-center gap-xs mb-md text-on-surface-variant">
+<span class="flex items-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined filled-icon text-[16px]">star</span>
+<span class="font-label-md text-label-md ml-1 text-on-surface">4.7</span>
+</span>
+<span class="font-caption text-caption">(1,245 students)</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">₹2,999</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md h-12 hover:bg-primary/90 transition-colors"><a id="enrollBtn4" href="studentsign.html" class="text-on-primary w-full h-full flex items-center justify-center">Enroll Now</a></button>
+</div>
+</div>
+</article>
+<!-- Course Card 5 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container-high overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+<div class="relative h-48 w-full">
+<div class="bg-cover bg-center w-full h-full" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60')"></div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded font-caption text-caption text-primary">Engineering</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs leading-tight">Full Stack Web Development</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Master front-end and back-end development using React, Node.js, and MongoDB.</p>
+<div class="flex items-center gap-xs mb-md text-on-surface-variant">
+<span class="flex items-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined filled-icon text-[16px]">star</span>
+<span class="font-label-md text-label-md ml-1 text-on-surface">4.8</span>
+</span>
+<span class="font-caption text-caption">(4,120 students)</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">₹8,999</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md h-12 hover:bg-primary/90 transition-colors"><a id="enrollBtn5" href="studentsign.html" class="text-on-primary w-full h-full flex items-center justify-center">Enroll Now</a></button>
+</div>
+</div>
+</article>
+<!-- Course Card 6 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container-high overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+<div class="relative h-48 w-full">
+<div class="bg-cover bg-center w-full h-full" style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60')"></div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded font-caption text-caption text-primary">Design</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs leading-tight">Graphic Design Fundamentals</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Discover the core principles of typography, color theory, and layout using Adobe Creative Cloud.</p>
+<div class="flex items-center gap-xs mb-md text-on-surface-variant">
+<span class="flex items-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined filled-icon text-[16px]">star</span>
+<span class="font-label-md text-label-md ml-1 text-on-surface">4.6</span>
+</span>
+<span class="font-caption text-caption">(2,800 students)</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">₹3,499</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md h-12 hover:bg-primary/90 transition-colors"><a id="enrollBtn6" href="studentsign.html" class="text-on-primary w-full h-full flex items-center justify-center">Enroll Now</a></button>
+</div>
+</div>
+</article>
+<!-- Course Card 7 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container-high overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+<div class="relative h-48 w-full">
+<div class="bg-cover bg-center w-full h-full" style="background-image: url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60')"></div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded font-caption text-caption text-primary">Data Science</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs leading-tight">Machine Learning A-Z</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">A complete guide to building machine learning algorithms in Python and R.</p>
+<div class="flex items-center gap-xs mb-md text-on-surface-variant">
+<span class="flex items-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined filled-icon text-[16px]">star</span>
+<span class="font-label-md text-label-md ml-1 text-on-surface">4.9</span>
+</span>
+<span class="font-caption text-caption">(5,300 students)</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">₹11,999</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md h-12 hover:bg-primary/90 transition-colors"><a id="enrollBtn7" href="studentsign.html" class="text-on-primary w-full h-full flex items-center justify-center">Enroll Now</a></button>
+</div>
+</div>
+</article>
+<!-- Course Card 8 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container-high overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+<div class="relative h-48 w-full">
+<div class="bg-cover bg-center w-full h-full" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60')"></div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded font-caption text-caption text-primary">Business</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs leading-tight">Product Management Masterclass</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Learn how to build products that users love, from ideation to launch.</p>
+<div class="flex items-center gap-xs mb-md text-on-surface-variant">
+<span class="flex items-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined filled-icon text-[16px]">star</span>
+<span class="font-label-md text-label-md ml-1 text-on-surface">4.7</span>
+</span>
+<span class="font-caption text-caption">(1,950 students)</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">₹6,499</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md h-12 hover:bg-primary/90 transition-colors"><a id="enrollBtn8" href="studentsign.html" class="text-on-primary w-full h-full flex items-center justify-center">Enroll Now</a></button>
+</div>
+</div>
+</article>
+<!-- Course Card 9 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container-high overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+<div class="relative h-48 w-full">
+<div class="bg-cover bg-center w-full h-full" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60')"></div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded font-caption text-caption text-primary">Engineering</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs leading-tight">Cloud Computing with AWS</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Get hands-on experience with Amazon Web Services and prepare for your AWS Solutions Architect certification.</p>
+<div class="flex items-center gap-xs mb-md text-on-surface-variant">
+<span class="flex items-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined filled-icon text-[16px]">star</span>
+<span class="font-label-md text-label-md ml-1 text-on-surface">4.8</span>
+</span>
+<span class="font-caption text-caption">(3,420 students)</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">₹9,999</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md h-12 hover:bg-primary/90 transition-colors"><a id="enrollBtn9" href="studentsign.html" class="text-on-primary w-full h-full flex items-center justify-center">Enroll Now</a></button>
+</div>
+</div>
+</article>
+<!-- Course Card 10 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container-high overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+<div class="relative h-48 w-full">
+<div class="bg-cover bg-center w-full h-full" style="background-image: url('https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60')"></div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded font-caption text-caption text-primary">Marketing</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs leading-tight">SEO Optimization Secrets</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Rank higher on Google and drive organic traffic to your website with proven SEO strategies.</p>
+<div class="flex items-center gap-xs mb-md text-on-surface-variant">
+<span class="flex items-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined filled-icon text-[16px]">star</span>
+<span class="font-label-md text-label-md ml-1 text-on-surface">4.5</span>
+</span>
+<span class="font-caption text-caption">(1,110 students)</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">₹2,499</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md h-12 hover:bg-primary/90 transition-colors"><a id="enrollBtn10" href="studentsign.html" class="text-on-primary w-full h-full flex items-center justify-center">Enroll Now</a></button>
+</div>
+</div>
+</article>
+<!-- Course Card 11 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container-high overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+<div class="relative h-48 w-full">
+<div class="bg-cover bg-center w-full h-full" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60')"></div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded font-caption text-caption text-primary">Business</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs leading-tight">Financial Modeling</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Build complex financial models to evaluate business opportunities and investment risks.</p>
+<div class="flex items-center gap-xs mb-md text-on-surface-variant">
+<span class="flex items-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined filled-icon text-[16px]">star</span>
+<span class="font-label-md text-label-md ml-1 text-on-surface">4.7</span>
+</span>
+<span class="font-caption text-caption">(980 students)</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">₹5,999</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md h-12 hover:bg-primary/90 transition-colors"><a id="enrollBtn11" href="studentsign.html" class="text-on-primary w-full h-full flex items-center justify-center">Enroll Now</a></button>
+</div>
+</div>
+</article>
+<!-- Course Card 12 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container-high overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+<div class="relative h-48 w-full">
+<div class="bg-cover bg-center w-full h-full" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60')"></div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded font-caption text-caption text-primary">Engineering</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs leading-tight">React Native App Dev</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Develop cross-platform mobile applications for iOS and Android using React Native.</p>
+<div class="flex items-center gap-xs mb-md text-on-surface-variant">
+<span class="flex items-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined filled-icon text-[16px]">star</span>
+<span class="font-label-md text-label-md ml-1 text-on-surface">4.6</span>
+</span>
+<span class="font-caption text-caption">(2,350 students)</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">₹7,499</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md h-12 hover:bg-primary/90 transition-colors"><a id="enrollBtn12" href="studentsign.html" class="text-on-primary w-full h-full flex items-center justify-center">Enroll Now</a></button>
+</div>
+</div>
+</article>
+<!-- Course Card 13 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container-high overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+<div class="relative h-48 w-full">
+<div class="bg-cover bg-center w-full h-full" style="background-image: url('file:///C:/Users/Utkarsh/.gemini/antigravity-ide/brain/9537c8ad-f500-40b6-82da-eb8cfa3056a9/ai_ethics_course_1787867322400.png')"></div>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded font-caption text-caption text-primary">Data Science</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs leading-tight">AI Ethics & Governance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Understand the ethical implications of artificial intelligence and how to build responsible AI systems.</p>
+<div class="flex items-center gap-xs mb-md text-on-surface-variant">
+<span class="flex items-center text-secondary-fixed-dim">
+<span class="material-symbols-outlined filled-icon text-[16px]">star</span>
+<span class="font-label-md text-label-md ml-1 text-on-surface">4.8</span>
+</span>
+<span class="font-caption text-caption">(1,600 students)</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">₹4,999</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md h-12 hover:bg-primary/90 transition-colors"><a id="enrollBtn13" href="studentsign.html" class="text-on-primary w-full h-full flex items-center justify-center">Enroll Now</a></button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-low dark:bg-inverse-surface shadow-md flex justify-around items-center h-20 pb-2 px-margin-mobile md:hidden">
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-on-secondary-container text-on-secondary-container dark:text-secondary-container rounded-xl px-3 py-1 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined filled-icon" data-icon="school">school</span>
+<span class="font-label-md text-label-md mt-1">Catalog</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-md text-label-md mt-1">My Learning</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-md text-label-md mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md mt-1">Profile</span>
+</a>
+</nav>
+<style>
+        /* Utility for hiding scrollbar in category chips container but allowing scroll */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            // User is logged in, change links to payment gateway
+            document.getElementById('enrollBtn1').href = "payment.html?courseId=1&amount=4999";
+            document.getElementById('enrollBtn2').href = "payment.html?courseId=2&amount=3500";
+            document.getElementById('enrollBtn3').href = "payment.html?courseId=3&amount=12500";
+            document.getElementById('enrollBtn4').href = "payment.html?courseId=4&amount=2999";
+            document.getElementById('enrollBtn5').href = "payment.html?courseId=5&amount=8999";
+            document.getElementById('enrollBtn6').href = "payment.html?courseId=6&amount=3499";
+            document.getElementById('enrollBtn7').href = "payment.html?courseId=7&amount=11999";
+            document.getElementById('enrollBtn8').href = "payment.html?courseId=8&amount=6499";
+            document.getElementById('enrollBtn9').href = "payment.html?courseId=9&amount=9999";
+            document.getElementById('enrollBtn10').href = "payment.html?courseId=10&amount=2499";
+            document.getElementById('enrollBtn11').href = "payment.html?courseId=11&amount=5999";
+            document.getElementById('enrollBtn12').href = "payment.html?courseId=12&amount=7499";
+            document.getElementById('enrollBtn13').href = "payment.html?courseId=13&amount=4999";
+        }
+    });
+</script>
+<script src="tracking.js"></script>
+</body></html>

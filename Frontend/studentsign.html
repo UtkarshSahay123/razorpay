@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina Education - Sign In</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#f7f9fb",
+                    "inverse-primary": "#b8c4ff",
+                    "secondary-fixed": "#6ffbbe",
+                    "error": "#ba1a1a",
+                    "primary-container": "#1e40af",
+                    "primary": "#00288e",
+                    "primary-fixed": "#dde1ff",
+                    "secondary": "#006c49",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "on-primary-fixed": "#001453",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#444653",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#b8c4ff",
+                    "tertiary-container": "#872d00",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-primary-container": "#a8b8ff",
+                    "on-surface": "#191c1e",
+                    "on-secondary-container": "#00714d",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#802a00",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#d8dadc",
+                    "on-primary-fixed-variant": "#173bab",
+                    "surface-container": "#eceef0",
+                    "on-tertiary-fixed": "#380d00",
+                    "outline": "#757684",
+                    "surface-container-high": "#e6e8ea",
+                    "on-tertiary-container": "#ffa583",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary": "#611e00",
+                    "surface": "#f7f9fb",
+                    "surface-variant": "#e0e3e5",
+                    "surface-tint": "#3755c3",
+                    "tertiary-fixed": "#ffdbce",
+                    "secondary-fixed-dim": "#4edea3",
+                    "inverse-surface": "#2d3133",
+                    "outline-variant": "#c4c5d5",
+                    "on-background": "#191c1e",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#6cf8bb",
+                    "surface-bright": "#f7f9fb",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container-highest": "#e0e3e5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "margin-mobile": "16px",
+                    "sm": "16px",
+                    "xl": "64px",
+                    "xs": "8px",
+                    "md": "24px",
+                    "gutter": "24px",
+                    "lg": "40px",
+                    "margin-desktop": "48px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Inter"
+                    ],
+                    "headline-lg-mobile": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "caption": [
+                            "Inter"
+                    ],
+                    "label-md": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "caption": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .input-field {
+            border-radius: 12px;
+            border: 1px solid #c4c5d5;
+            transition: all 0.2s ease;
+        }
+        .input-field:focus {
+            border-color: #00288e;
+            box-shadow: 0 0 0 2px rgba(0, 40, 142, 0.2);
+            outline: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen flex flex-col font-body-md text-on-surface">
+  <!-- TopAppBar (Desktop) -->
+  <header
+    class="hidden md:flex justify-between items-center px-margin-desktop h-20 w-full bg-surface shadow-sm sticky top-0 z-50">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-3xl" data-icon="school">school</span>
+      <span class="font-headline-md text-headline-md text-primary font-bold">EduFlow</span>
+    </div>
+    <nav class="flex gap-8 items-center">
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="index.html">Home</a>
+     
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+        href="course.html">Catalog</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+        href="adminsignin.html">Admin</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="studentsign.html" id="avatarLinkDesktop" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-surface-variant transition-colors shadow-sm text-on-surface-variant">
+        <span class="material-symbols-outlined text-2xl">person</span>
+      </a>
+    </div>
+  </header>
+  <!-- TopAppBar (Mobile) -->
+  <header
+    class="md:hidden flex justify-between items-center px-margin-mobile h-16 w-full fixed top-0 z-50 bg-surface shadow-sm">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-2xl" data-icon="school">school</span>
+      <span class="font-headline-md text-headline-md-mobile text-primary font-bold">EduFlow</span>
+    </div>
+    <a href="studentsign.html" id="avatarLinkMobile" class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-surface-variant transition-colors shadow-sm text-on-surface-variant">
+      <span class="material-symbols-outlined text-xl">person</span>
+    </a>
+  </header>
+<main class="flex-grow flex flex-col justify-center w-full max-w-md mx-auto p-margin-mobile md:p-margin-desktop relative z-10">
+<div class="glass-card rounded-xl p-md md:p-lg">
+<div class="text-center mb-lg">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-xs">Welcome Back</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Sign in to continue your learning journey.</p>
+</div>
+<form id="loginForm" class="space-y-sm">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">mail</span>
+<input class="input-field w-full h-12 pl-10 pr-3 font-body-md text-body-md bg-surface-container-lowest" id="email" name="email" placeholder="student@lumina.edu" required="" type="email"/>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="password">Password</label>
+<a class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors" href="#">Forgot Password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">lock</span>
+<input class="input-field w-full h-12 pl-10 pr-3 font-body-md text-body-md bg-surface-container-lowest" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<button class="w-full h-12 bg-primary text-on-primary font-label-md text-label-md rounded-[12px] hover:bg-primary-container active:scale-[0.98] transition-all duration-200 mt-md shadow-sm" type="submit">
+                    Sign In
+                </button>
+</form>
+<div class="mt-lg relative flex items-center justify-center">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant"></div>
+</div>
+<div class="relative bg-surface-container-lowest px-4 text-on-surface-variant font-caption text-caption uppercase tracking-wider">
+                    Or continue with
+                </div>
+</div>
+<div class="mt-sm grid grid-cols-2 gap-sm">
+<button class="flex items-center justify-center gap-2 h-12 rounded-[12px] border border-outline-variant hover:bg-surface-container-low transition-colors font-label-md text-label-md text-on-surface" type="button">
+<svg class="w-5 h-5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path></svg>
+                    Google
+                </button>
+<button class="flex items-center justify-center gap-2 h-12 rounded-[12px] border border-outline-variant hover:bg-surface-container-low transition-colors font-label-md text-label-md text-on-surface" type="button">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.15 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.85 1.98-1.74 3.37-2.53 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"></path></svg>
+                    Apple
+                </button>
+</div>
+<div class="mt-md text-center font-body-md text-body-md text-on-surface-variant">
+                New to Lumina? 
+                <a class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors" href="studentsignup.html">Create an account</a>
+</div>
+</div>
+</main>
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none opacity-20">
+<div class="absolute -top-1/4 -right-1/4 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-primary-fixed to-secondary-fixed blur-3xl opacity-50 mix-blend-multiply"></div>
+<div class="absolute -bottom-1/4 -left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-tertiary-fixed to-inverse-primary blur-3xl opacity-50 mix-blend-multiply"></div>
+</div>
+<script>
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    
+    try {
+        const response = await fetch('http://localhost:8080/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+        
+        if (response.ok) {
+            const data = await response.json();
+            if(data.role === 'STUDENT') {
+                localStorage.setItem('token', data.token);
+                window.location.href = 'studentdashboard.html';
+            } else {
+                alert('Invalid credentials for student portal. Please use the Admin login.');
+            }
+        } else {
+            const errorText = await response.text();
+            alert('Login failed: ' + errorText);
+        }
+    } catch (error) {
+        alert('Error connecting to server.');
+    }
+});
+</script>
+</body></html>

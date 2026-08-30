@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina Education - Sign Up</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f7f9fb",
+                        "inverse-primary": "#b8c4ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1e40af",
+                        "primary": "#00288e",
+                        "primary-fixed": "#dde1ff",
+                        "secondary": "#006c49",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "on-primary-fixed": "#001453",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#444653",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "tertiary-container": "#872d00",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary-container": "#a8b8ff",
+                        "on-surface": "#191c1e",
+                        "on-secondary-container": "#00714d",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#802a00",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-fixed-variant": "#173bab",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-fixed": "#380d00",
+                        "outline": "#757684",
+                        "surface-container-high": "#e6e8ea",
+                        "on-tertiary-container": "#ffa583",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary": "#611e00",
+                        "surface": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "surface-tint": "#3755c3",
+                        "tertiary-fixed": "#ffdbce",
+                        "secondary-fixed-dim": "#4edea3",
+                        "inverse-surface": "#2d3133",
+                        "outline-variant": "#c4c5d5",
+                        "on-background": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#6cf8bb",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-highest": "#e0e3e5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "sm": "16px",
+                        "xl": "64px",
+                        "xs": "8px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "lg": "40px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md antialiased">
+  <!-- TopAppBar (Desktop) -->
+  <header
+    class="hidden md:flex justify-between items-center px-margin-desktop h-20 w-full bg-surface shadow-sm sticky top-0 z-50">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-3xl" data-icon="school">school</span>
+      <span class="font-headline-md text-headline-md text-primary font-bold">EduFlow</span>
+    </div>
+    <nav class="flex gap-8 items-center">
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="index.html">Home</a>
+     
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+        href="course.html">Catalog</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+        href="adminsignin.html">Admin</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="studentsign.html" id="avatarLinkDesktop" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-surface-variant transition-colors shadow-sm text-on-surface-variant">
+        <span class="material-symbols-outlined text-2xl">person</span>
+      </a>
+    </div>
+  </header>
+  <!-- TopAppBar (Mobile) -->
+  <header
+    class="md:hidden flex justify-between items-center px-margin-mobile h-16 w-full fixed top-0 z-50 bg-surface shadow-sm">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-2xl" data-icon="school">school</span>
+      <span class="font-headline-md text-headline-md-mobile text-primary font-bold">EduFlow</span>
+    </div>
+    <a href="studentsign.html" id="avatarLinkMobile" class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-surface-variant transition-colors shadow-sm text-on-surface-variant">
+      <span class="material-symbols-outlined text-xl">person</span>
+    </a>
+  </header>
+<main class="flex-grow flex items-center justify-center p-margin-mobile md:p-margin-desktop">
+<!-- Registration Card Container -->
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-xl shadow-[0_8px_24px_rgba(0,0,0,0.05)] border border-surface-variant overflow-hidden flex flex-col">
+<!-- Branding Header -->
+<div class="p-md md:p-lg border-b border-surface-variant flex flex-col items-center text-center">
+<div class="flex items-center gap-2 mb-sm text-primary">
+<span class="material-symbols-outlined text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">school</span>
+<h1 class="font-headline-md text-headline-md font-bold tracking-tight">Lumina Education</h1>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mt-xs">Start Your Journey</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-sm mx-auto">Create an account to access world-class educational resources and track your progress.</p>
+</div>
+<!-- Form Area -->
+<div class="p-md md:p-lg flex-grow">
+<form id="signupForm" class="space-y-sm">
+<!-- Full Name -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="fullname">Full Name</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+</div>
+<input autocomplete="name" class="block w-full pl-10 pr-3 py-3 border border-outline rounded-lg bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary font-body-md text-body-md transition-shadow" id="fullname" name="fullname" placeholder="Jane Doe" required="" type="text"/>
+</div>
+</div>
+<!-- Email -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="email">Email Address</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<input autocomplete="email" class="block w-full pl-10 pr-3 py-3 border border-outline rounded-lg bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary font-body-md text-body-md transition-shadow" id="email" name="email" placeholder="student@lumina.edu" required="" type="email"/>
+</div>
+</div>
+<!-- Password -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-xs" for="password">Password</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<input class="block w-full pl-10 pr-10 py-3 border border-outline rounded-lg bg-surface-container-lowest text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary font-body-md text-body-md transition-shadow" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer text-on-surface-variant hover:text-on-surface" onclick="togglePasswordVisibility()">
+<span class="material-symbols-outlined" id="password-toggle-icon">visibility_off</span>
+</div>
+</div>
+<p class="mt-2 font-caption text-caption text-on-surface-variant">Must be at least 8 characters long.</p>
+</div>
+<!-- Terms Checkbox -->
+<div class="flex items-start mt-sm">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 text-primary bg-surface-container-lowest border-outline rounded focus:ring-primary focus:ring-2 focus:ring-offset-0" id="terms" name="terms" required="" type="checkbox"/>
+</div>
+<div class="ml-3 text-sm">
+<label class="font-body-md text-body-md text-on-surface-variant" for="terms">
+                                I agree to the <a class="font-label-md text-label-md text-primary hover:underline" href="#">Terms &amp; Conditions</a> and <a class="font-label-md text-label-md text-primary hover:underline" href="#">Privacy Policy</a>.
+                            </label>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-sm">
+<button class="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm font-label-md text-label-md text-on-primary bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors h-12" type="submit">
+                            Create Account
+                        </button>
+</div>
+</form>
+</div>
+<!-- Footer Link -->
+<div class="p-md border-t border-surface-variant bg-surface-container-low text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Already have an account? 
+                    <a class="font-label-md text-label-md text-primary hover:underline ml-1 font-semibold" href="#">Sign In</a>
+</p>
+</div>
+</div>
+</main>
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('password-toggle-icon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.textContent = 'visibility';
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.textContent = 'visibility_off';
+            }
+        }
+
+        document.getElementById('signupForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const fullName = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            try {
+                const response = await fetch('http://localhost:8080/api/auth/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ fullName, email, password, role: 'STUDENT' })
+                });
+                
+                if (response.ok) {
+                    alert('Registration successful! Please sign in.');
+                    window.location.href = 'studentsign.html';
+                } else {
+                    const errorText = await response.text();
+                    alert('Registration failed: ' + errorText);
+                }
+            } catch (error) {
+                alert('Error connecting to server.');
+            }
+        });
+    </script>
+</body></html>
