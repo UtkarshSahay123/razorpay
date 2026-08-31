@@ -195,6 +195,7 @@
       min-height: max(884px, 100dvh);
     }
   </style>
+    <script src="config.js"></script>
   </head>
 <body class="bg-background min-h-screen flex flex-col font-body-md text-on-surface">
   <!-- TopAppBar (Desktop) -->
@@ -292,7 +293,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     const password = document.getElementById('password').value;
     
     try {
-        const response = await fetch('http://localhost:8080/api/auth/login', {
+        const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })

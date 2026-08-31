@@ -2,7 +2,7 @@
  * Tracking module for AI Revenue Recovery
  */
 const Tracking = (function() {
-    const API_URL = 'http://localhost:8080/api/tracking/event';
+    const API_URL = API_BASE_URL + '/api/tracking/event';
     
     // Attempt to get user token
     function getToken() {

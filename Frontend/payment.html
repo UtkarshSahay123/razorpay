@@ -6,6 +6,7 @@
     <title>Processing Payment - Lumina Education</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="config.js"></script>
 </head>
 <body class="bg-gray-50 flex items-center justify-center h-screen">
     <div class="max-w-md w-full bg-white rounded-lg shadow-md p-8 text-center" id="statusContainer">
@@ -38,7 +39,7 @@
 
             try {
                 // 1. Create Order
-                const createOrderRes = await fetch('http://localhost:8080/api/payment/create-order', {
+                const createOrderRes = await fetch(`${API_BASE_URL}/api/payment/create-order`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -77,7 +78,7 @@
                     "modal": {
                         "ondismiss": async function() {
                             try {
-                                await fetch('http://localhost:8080/api/payment/abandoned', {
+                                await fetch(`${API_BASE_URL}/api/payment/abandoned`, {
                                     method: 'POST',
                                     headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
                                     body: JSON.stringify({ orderId: orderData.orderId })
@@ -95,7 +96,7 @@
                 
                 rzp1.on('payment.failed', async function (response){
                     try {
-                        await fetch('http://localhost:8080/api/payment/failed', {
+                        await fetch(`${API_BASE_URL}/api/payment/failed`, {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
                             body: JSON.stringify({
@@ -122,7 +123,7 @@
             document.getElementById("statusTitle").className = "text-2xl font-bold mb-4 text-yellow-600";
             
             try {
-                const verifyRes = await fetch('http://localhost:8080/api/payment/verify', {
+                const verifyRes = await fetch(`${API_BASE_URL}/api/payment/verify`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
