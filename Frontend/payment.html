@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Processing Payment - Lumina Education</title>
+    <title>Processing Payment - EduFlow</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script src="config.js"></script>
@@ -62,7 +62,7 @@
                     "key": orderData.keyId,
                     "amount": orderData.amount,
                     "currency": "INR",
-                    "name": "Lumina Education",
+                    "name": "EduFlow",
                     "description": "Course Enrollment",
                     "order_id": orderData.orderId,
                     "handler": async function (response) {
