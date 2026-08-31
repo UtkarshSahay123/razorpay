@@ -423,17 +423,7 @@
       e.preventDefault();
       const token = localStorage.getItem('token');
       if (token) {
-        try {
-          const payloadBase64 = token.split('.')[1];
-          const payload = JSON.parse(atob(payloadBase64));
-          if (payload.role === 'ADMIN') {
-            window.location.href = 'admindash.html';
-          } else {
-            window.location.href = 'studentdashboard.html';
-          }
-        } catch (err) {
-          window.location.href = 'studentsign.html';
-        }
+        window.location.href = 'studentdashboard.html';
       } else {
         window.location.href = 'studentsign.html';
       }
