@@ -112,6 +112,7 @@
       min-height: max(884px, 100dvh);
     }
   </style>
+    <script src="config.js"></script>
   </head>
 <body class="bg-background text-on-background font-body-md min-h-screen">
 <!-- TopAppBar -->
@@ -327,7 +328,7 @@
       }
 
       try {
-          const response = await fetch(`http://localhost:8080/api/dashboard/admin?span=${span}`, {
+          const response = await fetch(`${API_BASE_URL}/api/dashboard/admin?span=${span}`, {
               method: 'GET',
               headers: {
                   'Authorization': `Bearer ${token}`

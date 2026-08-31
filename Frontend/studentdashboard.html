@@ -111,6 +111,7 @@
             font-variation-settings: 'FILL' 1;
         }
     </style>
+    <script src="config.js"></script>
 </head>
 <body class="bg-background text-on-background min-h-screen font-body-md">
   <!-- TopAppBar (Desktop) -->
@@ -228,7 +229,7 @@
         }
 
         try {
-            const response = await fetch('http://localhost:8080/api/dashboard/student', {
+            const response = await fetch(`${API_BASE_URL}/api/dashboard/student`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`
