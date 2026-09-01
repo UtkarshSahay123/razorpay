@@ -11,4 +11,3 @@ public class EduflowBackendApplication {
         SpringApplication.run(EduflowBackendApplication.class, args);
     }
 }
-
