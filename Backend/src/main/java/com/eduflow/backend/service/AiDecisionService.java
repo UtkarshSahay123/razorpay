@@ -25,7 +25,6 @@ public class AiDecisionService {
         double prob = prediction.getRecoveryProbability() != null ? prediction.getRecoveryProbability() : 0.0;
         double amount = order.getAmount() != null ? order.getAmount() : 0.0;
 
-        // Override AI probability: Always send a link regardless of score
         if ("ABANDONED".equals(failureCode)) {
             action = "EMAIL_REMINDER";
             reason = "Checkout abandonment";
@@ -38,8 +37,6 @@ public class AiDecisionService {
 
         double expectedRecovery = amount * prob;
         double expectedValue = expectedRecovery - actionCost;
-        
-        // We removed the `expectedValue <= 0` override because we want to guarantee the link is sent.
 
         Intervention intervention = new Intervention();
         intervention.setUser(user);

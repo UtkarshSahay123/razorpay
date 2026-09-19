@@ -21,7 +21,7 @@ public class InterventionProcessor {
     @Autowired
     private EmailService emailService;
 
-    // Run every 30 seconds for testing/MVP purposes
+    // Runs every 30 seconds
     @Scheduled(fixedRate = 30000)
     public void processPendingInterventions() {
         List<Intervention> pendingInterventions = interventionRepository.findByStatus("PENDING");
@@ -31,13 +31,13 @@ public class InterventionProcessor {
             
             if ("EMAIL_REMINDER".equals(type) || "PAYMENT_RETRY".equals(type)) {
                 try {
-                    // Phase 10: Create Razorpay Payment Link
+                    // Create Razorpay payment link
                     String paymentLink = paymentService.createRecoveryPaymentLink(intervention.getPaymentOrder());
                     System.out.println("\n=======================================================");
-                    System.out.println("PHASE 10: Generated Razorpay Payment Link: " + paymentLink);
+                    System.out.println("Generated Razorpay payment link: " + paymentLink);
                     System.out.println("=======================================================\n");
                     
-                    // Phase 11: Send Recovery Email
+                    // Send recovery email
                     emailService.sendRecoveryEmail(
                         intervention.getUser(), 
                         intervention.getPaymentOrder().getCourse().getTitle(), 
@@ -53,7 +53,7 @@ public class InterventionProcessor {
                     e.printStackTrace();
                 }
             } else if ("COURSE_RECOMMENDATION".equals(type) || "NO_ACTION".equals(type)) {
-                // Auto-complete non-payment link actions for now
+                // Nothing to send for these types
                 intervention.setStatus("SKIPPED");
                 intervention.setCompletedAt(LocalDateTime.now());
                 interventionRepository.save(intervention);

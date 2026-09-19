@@ -32,6 +32,9 @@ Instead of just processing payments and hoping people finish checkout, EduFlow *
 
 > Built as a generic pattern: the abandoned‑checkout → predict → recover → notify → close‑the‑loop pipeline is not hard‑wired to courses. Swap the "course" entity for a product, a subscription plan, or a service booking and the same pipeline applies.
 
+> [!NOTE]
+> **Made with AI.** This project was built with the help of AI tools (AI-assisted code generation and design).
+
 <br/>
 
 ## 🗺️ Table of Contents

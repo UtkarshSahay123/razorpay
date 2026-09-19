@@ -1,5 +1,5 @@
 /**
- * Tracking module for AI Revenue Recovery
+ * Client-side event tracking
  */
 const Tracking = (function() {
     const API_URL = API_BASE_URL + '/api/tracking/event';

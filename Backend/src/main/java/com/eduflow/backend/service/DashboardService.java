@@ -51,7 +51,7 @@ public class DashboardService {
         long completed = enrollmentRepository.countByUserAndCompleted(user, true);
         dto.setCompletedCourses(completed);
         
-        // Mock data for things not tracked currently
+        // Not tracked yet, estimated from completed courses
         dto.setHoursLearned(completed * 10);
         dto.setCertificatesEarned(completed);
         
@@ -115,7 +115,7 @@ public class DashboardService {
         interventionStats.setData(java.util.Arrays.asList((double) recoveredCount, (double) inProgressCount, (double) skippedFailedCount));
         dto.setInterventionStats(interventionStats);
         
-        // Generate AI Revenue Suggestions
+        // Revenue suggestions
         java.util.List<String> suggestions = new java.util.ArrayList<>();
         
         long totalPendingOrders = paymentOrderRepository.findByStatus("PENDING").size();
