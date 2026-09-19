@@ -162,7 +162,6 @@ razorpay/
 │   ├── generate_dataset.py        # Synthetic training data generator
 │   └── xgboost_model.json / label_encoder.json
 │
-├── Antigravity_AI_Revenue_Recovery_Implementation.md   # Full implementation spec
 ├── Workflow for RazorPay.md                            # Original product workflow notes
 └── AI_Revenue_Recovery_Agent_Complete_Workflow.docx
 ```
